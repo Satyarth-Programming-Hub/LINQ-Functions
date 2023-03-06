@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LINQFunctions.Data;
+using System;
 using System.Linq;
 
 namespace LINQFunctions
@@ -8,33 +9,17 @@ namespace LINQFunctions
         static void Main(string[] args)
         {
 
-            int[] numbers = { 12, 7, 2, 15, 1, 18, 75, 155, 321, 400, 815, 980 };
+            //var employees = from employee in Employee.GetEmployees()
+            //                orderby employee.Gender descending, employee.Name
+            //                select employee;
 
-            //Aggregate
-            int total = numbers.Aggregate((a, b) => a + b);
-
-            //Count
-
-            var totalItemsInArray = numbers.Count();
-
-            //Min
-            var smallestItem = numbers.Min();
-
-            //Max
-            var BiggestItem = numbers.Max();
-
-            //Sum
-            var TotalofArray = numbers.Sum();
-
-            Console.WriteLine("Agg Total"+ total);
-            Console.WriteLine("Total Items"+totalItemsInArray);
-            Console.WriteLine("Smallest " + smallestItem);
-            Console.WriteLine("Biggest " + BiggestItem);
-            Console.WriteLine("SumTotal " + TotalofArray);
+            var employees = Employee.GetEmployees().OrderByDescending(e => e.Gender).ThenBy(e => e.Name);
 
 
-
-
+            foreach (var employee in employees)
+            {
+                Console.WriteLine(employee.Name + " " + employee.Gender + " " + employee.City);
+            }
 
             Console.ReadLine();
         }
