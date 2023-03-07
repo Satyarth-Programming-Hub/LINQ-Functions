@@ -9,17 +9,34 @@ namespace LINQFunctions
         static void Main(string[] args)
         {
 
-            //var employees = from employee in Employee.GetEmployees()
-            //                orderby employee.Gender descending, employee.Name
-            //                select employee;
-
-            var employees = Employee.GetEmployees().OrderByDescending(e => e.Gender).ThenBy(e => e.Name);
+            //var employee = Employee.GetEmployees().ElementAt(10);
+            //var employee = Employee.GetEmployees().ElementAtOrDefault(10);
 
 
-            foreach (var employee in employees)
-            {
-                Console.WriteLine(employee.Name + " " + employee.Gender + " " + employee.City);
-            }
+            //var employee = Employee.GetEmployees().FirstOrDefault(e=>e.Gender=="Femalee");
+            //var employee = Employee.GetEmployees().FirstOrDefault(e=>e.Gender=="Femalee");
+
+            //var employee = Employee.GetEmployees().Last(e => e.Gender == "Female");
+            //var employee = Employee.GetEmployees().LastOrDefault(e => e.Gender == "Female");
+
+            //var employee = Employee.GetEmployees().Single(e => e.City=="Jaipur");
+            //var employee = Employee.GetEmployees().SingleOrDefault(e => e.City=="Jaipurrr");
+
+
+            //var employee = Employee.GetEmployees().DefaultIfEmpty();
+
+            //var employee = Employee.GetEmployees().DefaultIfEmpty();
+
+
+            //int[] nums = { };
+
+            //var numbers = nums.DefaultIfEmpty();
+
+
+
+
+
+
 
             Console.ReadLine();
         }
